@@ -27,14 +27,12 @@ input.onButtonPressed(Button.A, function () {
     }
 })
 input.onButtonPressed(Button.AB, function () {
-    while (input2 > multiplier) {
+    while (input2 >= multiplier) {
         multiplier += multiplier
         multiplierValue += 1
     }
-    if (input2 != multiplier) {
-        multiplier = multiplier / 2
-        multiplierValue += -1
-    }
+    multiplier = multiplier / 2
+    multiplierValue += -1
     while (input2 > 0) {
         if (input2 >= multiplier) {
             led.plot((24 - multiplierValue) % 5, (24 - multiplierValue) / 5)
